@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>길 잃은 페이지</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="bg-layer aurora" id="aurora" hidden aria-hidden="true"></div>
+<div class="bg-layer neon-grid" id="bgNeon" hidden aria-hidden="true"></div>
+<div class="bg-layer starfield" id="bgStars" hidden aria-hidden="true"></div>
+<canvas class="fx" id="fx" aria-hidden="true"></canvas>
+
+<main>
+  <div class="code" aria-label="404">
+    <span class="digit">4</span>
+    <span class="compass" id="compass" aria-hidden="true"></span>
+    <span class="digit">4</span>
+  </div>
+
+  <h1>이 페이지, 잠시 자리를 비웠어요</h1>
+  <p class="lead">여기서 보내는 시간은 버려지지 않고 쌓여요.<br>쌓은 시간으로 이 페이지를 조금씩 꾸며 보세요.</p>
+
+  <section class="wallet" aria-label="시간 지갑">
+    <div class="wallet-stats">
+      <div>
+        <span class="label">벌어 둔 시간</span>
+        <strong id="earned">00:00</strong>
+      </div>
+      <div>
+        <span class="label">쓸 수 있는 시간</span>
+        <strong id="balance" class="accent">00:00</strong>
+      </div>
+    </div>
+    <div class="wallet-foot">
+      <span class="rate">페이지를 보고 있는 동안 쌓여요 · 이 브라우저에 저장돼요</span>
+      <button class="ghost-btn" id="endingBtn" type="button">엔딩 보기</button>
+    </div>
+  </section>
+
+  <section class="shop" aria-label="꾸미기 상점">
+    <div class="section-head">
+      <h2>꾸미기 상점</h2>
+      <span class="price">쌓은 시간으로 구매</span>
+    </div>
+    <div id="shop"></div>
+  </section>
+
+  <section class="ledger" aria-label="내 구매 기록">
+    <div class="section-head">
+      <h2>내 구매 기록</h2>
+    </div>
+    <ol class="ledger-list" id="historyList"></ol>
+    <p class="ledger-empty" id="historyEmpty">아직 구매한 꾸밈이 없어요.</p>
+  </section>
+
+  <div class="escape-zone">
+    <a class="btn" id="home" href="/">홈으로 돌아가기</a>
+    <div class="escape-note" id="escapeNote">버튼이 도망가려고 할지도 몰라요</div>
+  </div>
+
+  <footer>
+    Error 404 · 요청하신 페이지를 찾을 수 없습니다 ·
+    <a href="https://github.com/jibumgu" target="_blank" rel="noopener">github.com/jibumgu</a>
+  </footer>
+</main>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<div class="ending" id="ending" hidden>
+  <div class="ending-inner">
+    <p class="ending-line" style="animation-delay: .2s">왜, 당신은 이 404 에러 페이지에서 머물고 있습니까?</p>
+    <p class="ending-line" style="animation-delay: 1.8s">시간은 당신을 기다려주지 않습니다.</p>
+    <p class="ending-line soft" style="animation-delay: 3.6s">당신이 여기서 즐겁게 보낸 시간을 기억해주셨으면 좋겠습니다.</p>
+
+    <article class="receipt" id="receipt" style="animation-delay: 4.8s">
+      <header>
+        <strong>TIME EXCHANGE</strong>
+        <span id="receiptDate"></span>
+      </header>
+      <dl>
+        <div><dt>벌어 둔 시간</dt><dd id="rEarned">00:00</dd></div>
+        <div><dt>꾸미기에 쓴 시간</dt><dd id="rSpent">00:00</dd></div>
+        <div class="total"><dt>남은 잔고</dt><dd id="rBalance">00:00</dd></div>
+      </dl>
+      <ol id="receiptList"></ol>
+      <p class="receipt-empty" id="receiptEmpty">아직 산 꾸밈은 없어요. 이 페이지에서 보낸 시간만으로도 충분히 기억될 거예요.</p>
+      <div class="stamp" aria-hidden="true">기억됨</div>
+      <footer>기억해 주셔서 감사합니다</footer>
+    </article>
+
+    <div class="ending-actions">
+      <a class="btn" href="https://github.com/jibumgu" target="_blank" rel="noopener">GitHub 구경하기</a>
+      <button class="ghost-btn" id="stayBtn" type="button">다시 머물기</button>
+    </div>
+  </div>
+</div>
+
+<script src="effects.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
