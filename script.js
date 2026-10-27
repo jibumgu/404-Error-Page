@@ -269,13 +269,6 @@
     home.classList.add("dodge");
     note.textContent = notes[Math.min(dodges, notes.length - 1)];
   });
-  home.addEventListener("click", (e) => {
-    if (canHover && dodges < 3) {
-      e.preventDefault();
-      home.dispatchEvent(new Event("mouseenter"));
-      note.textContent = "잠깐, 아직 못 잡았어요!";
-    }
-  });
 
   let ticks = 0;
   setInterval(() => {
